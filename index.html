@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SANSKAR International School Hajipur - बाल सुरक्षा नीति एवं बुलिंग विरोधी चार्टर">
+<meta property="og:title" content="SANSKAR School — हमारे 5 वादे 🛡️">
+<meta property="og:description" content="हर बच्चा सुरक्षित, सम्मानित और खुश — SANSKAR International School Hajipur">
+<meta property="og:type" content="website">
+<title>SANSKAR International School | बाल सुरक्षा चार्टर</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --g:    #1B5E20;
+    --gm:   #2E7D32;
+    --gl:   #388E3C;
+    --gp:   #E8F5E9;
+    --y:    #FFF9C4;
+    --ym:   #FFF176;
+    --gold: #F9A825;
+    --w:    #FFFFFF;
+    --cr:   #FDFDF4;
+    --tx:   #1A2E1A;
+    --ts:   #4A6A4A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+    background: #0f1f0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--tx);
+  }
+
+  /* ── ANIMATED BG ── */
+  .bg-anim {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 20% 20%, rgba(27,94,32,0.6) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(249,168,37,0.12) 0%, transparent 50%),
+                #0f1f0f;
+  }
+  .bg-anim::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,241,118,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ── MAIN WRAPPER ── */
+  .page {
+    position: relative; z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 48px;
+  }
+
+  /* ── PROFILE HEADER ── */
+  .profile {
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+  .avatar-ring {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ym), var(--gold), var(--g));
+    padding: 3px;
+    animation: spin-ring 8s linear infinite;
+  }
+  @keyframes spin-ring {
+    from { background: linear-gradient(135deg, var(--ym), var(--gold), var(--g)); }
+    to   { background: linear-gradient(495deg, var(--ym), var(--gold), var(--g)); }
+  }
+  .avatar-inner {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: var(--g);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px; font-weight: 900;
+    color: var(--ym);
+    border: 3px solid #0f1f0f;
+  }
+  .verified {
+    position: absolute; bottom: 2px; right: 2px;
+    width: 26px; height: 26px;
+    background: var(--ym);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    border: 2px solid #0f1f0f;
+  }
+
+  .profile-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 900;
+    color: white;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .profile-handle {
+    font-size: 13px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .profile-bio {
+    font-size: 14px; font-weight: 700;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    max-width: 320px;
+    margin: 0 auto 18px;
+  }
+  .profile-bio span { color: var(--ym); }
+
+  /* location + stats row */
+  .meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .meta-item {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 700;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin: 8px 0 14px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec-label::before, .sec-label::after {
+    content: ''; flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* ── LINK BUTTONS ── */
+  .links { padding: 0 18px; display: flex; flex-direction: column; gap: 12px; }
+
+  .link-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  .link-btn:active { transform: scale(0.97); }
+
+  .link-btn::after {
+    content: '›';
+    position: absolute;
+    right: 18px;
+    font-size: 22px;
+    font-weight: 900;
+    opacity: 0.5;
+    transition: right 0.2s, opacity 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+  .link-btn:hover::after { right: 13px; opacity: 1; }
+
+  /* Primary — green */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--g) 0%, var(--gm) 100%);
+    border: 1.5px solid rgba(255,241,118,0.2);
+    box-shadow: 0 4px 20px rgba(27,94,32,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 10px 32px rgba(27,94,32,0.5); }
+
+  /* Yellow accent */
+  .btn-yellow {
+    background: linear-gradient(135deg, #F9A825 0%, #FFF176 100%);
+    border: none;
+    box-shadow: 0 4px 20px rgba(249,168,37,0.3);
+  }
+  .btn-yellow:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 10px 32px rgba(249,168,37,0.4); }
+  .btn-yellow .btn-title { color: var(--g) !important; }
+  .btn-yellow .btn-sub { color: rgba(27,94,32,0.7) !important; }
+  .btn-yellow::after { color: var(--g); }
+
+  /* Ghost */
+  .btn-ghost {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover { transform: translateY(-3px) scale(1.01); background: rgba(255,255,255,0.1); border-color: rgba(255,241,118,0.3); }
+
+  /* Red / alert */
+  .btn-red {
+    background: linear-gradient(135deg, #B71C1C 0%, #C62828 100%);
+    border: 1.5px solid rgba(255,100,100,0.2);
+    box-shadow: 0 4px 20px rgba(183,28,28,0.35);
+  }
+  .btn-red:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 10px 32px rgba(183,28,28,0.45); }
+
+  .btn-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  }
+  .btn-text { flex: 1; min-width: 0; }
+  .btn-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: white;
+    display: block;
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+  .btn-sub {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    display: block;
+    line-height: 1.4;
+  }
+
+  /* ── 5 PROMISES MINI CARDS ── */
+  .promises-section {
+    padding: 0 18px;
+    margin-top: 8px;
+  }
+  .promises-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .promise-mini {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 16px 14px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .promise-mini:hover {
+    background: rgba(255,241,118,0.1);
+    border-color: rgba(255,241,118,0.3);
+    transform: translateY(-3px);
+  }
+  .promise-mini .pm-icon { font-size: 26px; display: block; margin-bottom: 8px; }
+  .promise-mini .pm-title { font-size: 14px; font-weight: 900; color: white; margin-bottom: 3px; display: block; }
+  .promise-mini .pm-sub { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); line-height: 1.5; display: block; }
+
+  .promise-full {
+    background: linear-gradient(135deg, rgba(255,241,118,0.1), rgba(249,168,37,0.08));
+    border: 1.5px solid rgba(255,241,118,0.25);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    backdrop-filter: blur(8px);
+  }
+  .promise-full .pf-icon { font-size: 28px; flex-shrink: 0; }
+  .promise-full .pf-title { font-size: 14px; font-weight: 900; color: var(--ym); display: block; margin-bottom: 2px; }
+  .promise-full .pf-sub { font-size: 12px; font-weight: 600; color: rgba(255,241,118,0.65); line-height: 1.5; display: block; }
+
+  /* ── HELPLINE CARD ── */
+  .helpline-card {
+    margin: 8px 18px 0;
+    background: linear-gradient(135deg, #B71C1C, #C62828);
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(183,28,28,0.35);
+  }
+  .hc-icon { font-size: 36px; flex-shrink: 0; }
+  .hc-text .hc-title { font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px; }
+  .hc-text .hc-num { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 900; color: white; letter-spacing: 2px; line-height: 1; display: block; }
+  .hc-text .hc-sub { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.55); display: block; margin-top: 2px; }
+  .hc-badge { margin-left: auto; background: rgba(255,255,255,0.15); border-radius: 10px; padding: 6px 10px; text-align: center; flex-shrink: 0; }
+  .hc-badge span { display: block; font-size: 11px; font-weight: 800; color: white; line-height: 1.3; }
+
+  /* ── QUOTE STRIP ── */
+  .quote-strip {
+    margin: 16px 18px 0;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--ym);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+  }
+  .quote-strip p {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .quote-strip cite {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--ym);
+    font-style: normal;
+    display: block;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 28px 24px 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+  .footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+  /* ── PULSE ANIMATION for helpline ── */
+  @keyframes pulse-red {
+    0%, 100% { box-shadow: 0 4px 20px rgba(183,28,28,0.35); }
+    50% { box-shadow: 0 4px 32px rgba(183,28,28,0.65), 0 0 0 6px rgba(183,28,28,0.1); }
+  }
+  .helpline-card { animation: pulse-red 2.5s ease-in-out infinite; }
+
+  /* ── ENTRANCE ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .d1 { animation-delay: 0.05s; }
+  .d2 { animation-delay: 0.12s; }
+  .d3 { animation-delay: 0.19s; }
+  .d4 { animation-delay: 0.26s; }
+  .d5 { animation-delay: 0.33s; }
+  .d6 { animation-delay: 0.40s; }
+  .d7 { animation-delay: 0.47s; }
+  .d8 { animation-delay: 0.54s; }
+  .d9 { animation-delay: 0.61s; }
+  .d10{ animation-delay: 0.68s; }
+  .d11{ animation-delay: 0.75s; }
+  .d12{ animation-delay: 0.82s; }
+</style>
+</head>
+<body>
+
+<div class="bg-anim"></div>
+
+<div class="page">
+
+  <!-- ── PROFILE HEADER ── -->
+  <div class="profile fade-up d1">
+    <div class="avatar-wrap">
+      <div class="avatar-ring">
+        <div style="width:100%;height:100%;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;">
+          <div class="avatar-inner">S</div>
+        </div>
+      </div>
+      <div class="verified">🛡️</div>
+    </div>
+    <div class="profile-name">SANSKAR International School</div>
+    <div class="profile-handle">📍 Hajipur, Bihar</div>
+    <div class="profile-bio">
+      हर बच्चे की <span>सुरक्षा</span>, <span>इज़्ज़त</span> और <span>खुशी</span> हमारी पहली प्राथमिकता है।<br>
+      बाल सुरक्षा नीति एवं बुलिंग विरोधी चार्टर 2024–25
+    </div>
+    <div class="meta-row">
+      <div class="meta-item">📚 All-Through School</div>
+      <div class="meta-item">•</div>
+      <div class="meta-item">🌿 Est. for Excellence</div>
+    </div>
+  </div>
+
+  <!-- ── MAIN LINKS ── -->
+  <div class="sec-label fade-up d2">हमारे दस्तावेज़</div>
+
+  <div class="links">
+
+    <a class="link-btn btn-yellow fade-up d3" href="sanskar-hindi.html" target="_blank">
+      <div class="btn-icon">📋</div>
+      <div class="btn-text">
+        <span class="btn-title">🛡️ बाल सुरक्षा नीति + बुलिंग विरोधी चार्टर</span>
+        <span class="btn-sub">पूरी नीति हिंदी में पढ़ें — सभी के लिए</span>
+      </div>
+    </a>
+
+    <a class="link-btn btn-primary fade-up d4" href="sanskar-poster-5-waade.html" target="_blank">
+      <div class="btn-icon">⭐</div>
+      <div class="btn-text">
+        <span class="btn-title">हमारे 5 वादे — पोस्टर देखें</span>
+        <span class="btn-sub">हर कक्षा में लगा हुआ हमारा संकल्प</span>
+      </div>
+    </a>
+
+    <a class="link-btn btn-ghost fade-up d5" href="sanskar-charter.html" target="_blank">
+      <div class="btn-icon">🇬🇧</div>
+      <div class="btn-text">
+        <span class="btn-title">Policy in English</span>
+        <span class="btn-sub">Child Protection Policy & Anti-Bullying Charter</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── 5 PROMISES ── -->
+  <div class="sec-label fade-up d5" style="margin-top:20px;">हमारे 5 वादे</div>
+
+  <div class="promises-section fade-up d6">
+    <div class="promises-grid">
+      <div class="promise-mini">
+        <span class="pm-icon">👁️</span>
+        <span class="pm-title">हम देखते हैं</span>
+        <span class="pm-sub">कोई बच्चा यहाँ अदृश्य नहीं</span>
+      </div>
+      <div class="promise-mini">
+        <span class="pm-icon">👂</span>
+        <span class="pm-title">हम सुनते हैं</span>
+        <span class="pm-sub">बिना जज किए, हर बार</span>
+      </div>
+      <div class="promise-mini">
+        <span class="pm-icon">💪</span>
+        <span class="pm-title">हम सुरक्षित रखते हैं</span>
+        <span class="pm-sub">कोई समझौता नहीं</span>
+      </div>
+      <div class="promise-mini">
+        <span class="pm-icon">🌟</span>
+        <span class="pm-title">हम विश्वास करते हैं</span>
+        <span class="pm-sub">आपकी हिम्मत हमारी ताकत</span>
+      </div>
+    </div>
+    <div class="promise-full">
+      <span class="pf-icon">🤝</span>
+      <div>
+        <span class="pf-title">हम साथ हैं — हमेशा</span>
+        <span class="pf-sub">जो भी हो, आपको अकेले नहीं झेलना पड़ेगा। मदद हमेशा यहाँ है — बस बताइए।</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPEAK UP LINKS ── -->
+  <div class="sec-label fade-up d7" style="margin-top:20px;">मदद लें — अभी</div>
+
+  <div class="links">
+    <a class="link-btn btn-ghost fade-up d8" href="tel:1098">
+      <div class="btn-icon">📞</div>
+      <div class="btn-text">
+        <span class="btn-title">चाइल्डलाइन — 1098</span>
+        <span class="btn-sub">निःशुल्क · गोपनीय · 24 घंटे, 7 दिन</span>
+      </div>
+    </a>
+    <a class="link-btn btn-ghost fade-up d9" href="tel:9152987821">
+      <div class="btn-icon">🧠</div>
+      <div class="btn-text">
+        <span class="btn-title">iCall हेल्पलाइन — 9152987821</span>
+        <span class="btn-sub">मानसिक स्वास्थ्य सहायता</span>
+      </div>
+    </a>
+    <a class="link-btn btn-ghost fade-up d10" href="tel:112">
+      <div class="btn-icon">🚨</div>
+      <div class="btn-text">
+        <span class="btn-title">आपातकाल — 112</span>
+        <span class="btn-sub">तत्काल सहायता के लिए</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ── QUOTE ── -->
+  <div class="quote-strip fade-up d11">
+    <p>"SANSKAR में हर बच्चा जानता है कि वह अकेला नहीं है। यह सिर्फ एक नीति नहीं — यह हमारा जीवन है।"</p>
+    <cite>— SANSKAR International School, Hajipur</cite>
+  </div>
+
+  <!-- ── HELPLINE HIGHLIGHT ── -->
+  <div class="helpline-card fade-up d12">
+    <div class="hc-icon">🆘</div>
+    <div class="hc-text">
+      <span class="hc-title">राष्ट्रीय चाइल्डलाइन</span>
+      <span class="hc-num">1098</span>
+      <span class="hc-sub">निःशुल्क · किसी भी फोन से</span>
+    </div>
+    <div class="hc-badge">
+      <span>24/7</span>
+      <span>FREE</span>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer fade-up d12">
+    <div>🌿 SANSKAR International School, Hajipur</div>
+    <div>बाल सुरक्षा नीति — सत्र 2024–25</div>
+    <div style="margin-top:8px;">
+      POCSO 2012 · CBSE · NCPCR दिशानिर्देशों के अनुरूप
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
