@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README — SANSKAR International School GitHub Repository</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:      #1B5E20;
+    --green-mid:  #2E7D32;
+    --green-lt:   #388E3C;
+    --green-pale: #E8F5E9;
+    --yellow:     #FFF9C4;
+    --yellow-mid: #FFF176;
+    --gold:       #F9A825;
+    --white:      #FFFFFF;
+    --bg:         #0D1117;       /* GitHub dark bg */
+    --surface:    #161B22;       /* GitHub card bg */
+    --border:     #30363D;       /* GitHub border */
+    --text:       #E6EDF3;       /* GitHub text */
+    --text-soft:  #8B949E;       /* GitHub muted */
+    --text-link:  #58A6FF;       /* GitHub link blue */
+    --code-bg:    #1F2428;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── TOP NAV BAR (GitHub-style) ── */
+  .gh-nav {
+    background: #161B22;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .gh-logo {
+    font-size: 22px;
+    color: var(--text);
+    opacity: 0.8;
+  }
+  .gh-breadcrumb {
+    font-size: 14px;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .gh-breadcrumb .repo {
+    color: var(--text-link);
+    font-weight: 700;
+  }
+  .gh-breadcrumb .sep { opacity: 0.4; }
+
+  .gh-badges {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .gh-badge {
+    background: var(--green);
+    color: var(--yellow-mid);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .gh-badge.outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+  }
+
+  /* ── REPO HEADER ── */
+  .repo-header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px 0;
+    background: var(--surface);
+  }
+  .repo-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 16px;
+  }
+  .tab {
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-soft);
+    border-bottom: 2px solid transparent;
+    cursor: default;
+  }
+  .tab.active {
+    color: var(--text);
+    border-bottom-color: var(--gold);
+  }
+  .tab-icon { margin-right: 6px; }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+  }
+
+  /* ── README CONTENT ── */
+  .readme-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .readme-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-soft);
+  }
+  .readme-header span { font-weight: 700; color: var(--text); }
+  .readme-content {
+    padding: 32px 40px;
+  }
+
+  /* ── HERO BLOCK inside README ── */
+  .rm-hero {
+    background: linear-gradient(135deg, var(--green) 0%, #0A3D0A 100%);
+    border-radius: 12px;
+    padding: 36px 32px;
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .rm-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,241,118,0.15);
+  }
+  .rm-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,241,118,0.1);
+  }
+  .rm-hero-shield {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+    position: relative; z-index: 2;
+  }
+  .rm-hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 4px;
+    position: relative; z-index: 2;
+  }
+  .rm-hero h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--yellow-mid);
+    margin-bottom: 16px;
+    position: relative; z-index: 2;
+  }
+  .rm-hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 600;
+    position: relative; z-index: 2;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  /* Badge row */
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .rm-badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .rm-badge.green { background: var(--green); color: var(--yellow-mid); }
+  .rm-badge.yellow { background: var(--yellow-mid); color: var(--green); }
+  .rm-badge.outline { background: transparent; border: 1px solid var(--border); color: var(--text-soft); }
+
+  /* Promise quote */
+  .promise-quote {
+    background: rgba(255,241,118,0.08);
+    border-left: 4px solid var(--yellow-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  .promise-quote .hindi {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--yellow-mid);
+    margin-bottom: 6px;
+  }
+  .promise-quote .english {
+    font-size: 13px;
+    color: var(--text-soft);
+    font-style: italic;
+  }
+
+  /* Section titles */
+  .rm-h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    margin: 32px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .rm-h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-lt);
+    margin: 20px 0 10px;
+  }
+
+  /* File table */
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+  .file-table th {
+    background: rgba(255,255,255,0.04);
+    padding: 10px 14px;
+    text-align: left;
+    color: var(--text-soft);
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .file-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+  }
+  .file-table tr:last-child td { border-bottom: none; }
+  .file-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .file-table .filename {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-link);
+    font-size: 12px;
+  }
+
+  /* Policy highlights grid */
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .highlight-item {
+    background: rgba(27,94,32,0.15);
+    border: 1px solid rgba(27,94,32,0.35);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12.5px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .highlight-item .hico { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Bullying types */
+  .bully-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .btype {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 11.5px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .btype .bico { font-size: 20px; display: block; margin-bottom: 6px; }
+
+  /* Contact cards */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .contact-card {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-card .cico { font-size: 24px; }
+  .contact-card .cname { font-size: 11px; color: var(--text-soft); font-weight: 700; margin-bottom: 2px; }
+  .contact-card .cnum { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--yellow-mid); }
+
+  /* Legal badges */
+  .legal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .legal-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .legal-list li::before {
+    content: '📜';
+    flex-shrink: 0;
+  }
+
+  /* Sign off table */
+  .sig-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+  .sig-table th {
+    background: var(--green);
+    color: var(--yellow-mid);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 12px;
+  }
+  .sig-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .sig-table .blank { color: var(--text-soft); letter-spacing: 2px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+
+  /* Bottom hero */
+  .rm-footer {
+    background: linear-gradient(135deg, var(--green) 0%, #0A3D0A 100%);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 32px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  .rm-footer .big { font-size: 18px; font-weight: 900; color: var(--yellow-mid); margin-bottom: 6px; }
+  .rm-footer .small { font-size: 12px; color: rgba(255,255,255,0.55); font-weight: 600; font-style: italic; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+  .side-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .side-card-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .side-card-body { padding: 14px 16px; }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 12.5px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text-soft); font-weight: 600; }
+  .stat-val { color: var(--text); font-weight: 700; font-size: 12px; }
+  .stat-val.green { color: #3FB950; }
+  .stat-val.yellow { color: var(--yellow-mid); }
+
+  .lang-bar {
+    margin: 10px 0;
+  }
+  .lang-bar-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border);
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 8px;
+  }
+  .lang-seg { height: 100%; }
+  .seg-green { background: var(--green-lt); width: 60%; }
+  .seg-yellow { background: var(--gold); width: 25%; }
+  .seg-blue { background: #58A6FF; width: 15%; }
+  .lang-legend { display: flex; flex-direction: column; gap: 4px; }
+  .lang-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-soft); font-weight: 600; }
+  .lang-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 12.5px;
+    color: var(--text-link);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: default;
+  }
+  .quick-link:last-child { border-bottom: none; }
+  .quick-link:hover { color: var(--yellow-mid); }
+
+  .topic-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .topic-tag {
+    background: rgba(27,94,32,0.2);
+    border: 1px solid rgba(27,94,32,0.4);
+    color: #3FB950;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    cursor: default;
+  }
+
+  /* ── DIVIDER ── */
+  hr.rm-hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  @media (max-width: 800px) {
+    .main { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .readme-content { padding: 20px; }
+    .highlight-grid { grid-template-columns: 1fr; }
+    .bully-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- GitHub-style nav -->
+<div class="gh-nav">
+  <div class="gh-logo">⬡</div>
+  <div class="gh-breadcrumb">
+    <span class="repo">sanskar-school-hajipur</span>
+    <span class="sep">/</span>
+    <span class="repo">sanskar-charter</span>
+  </div>
+  <div class="gh-badges">
+    <div class="gh-badge">🌐 Public</div>
+    <div class="gh-badge outline">⭐ Star</div>
+    <div class="gh-badge outline">🍴 Fork</div>
+  </div>
+</div>
+
+<!-- Repo header tabs -->
+<div class="repo-header">
+  <div class="repo-tabs">
+    <div class="tab"><span class="tab-icon">📄</span>Code</div>
+    <div class="tab active"><span class="tab-icon">📋</span>README</div>
+    <div class="tab"><span class="tab-icon">⚙️</span>Settings</div>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="main">
+
+  <!-- README Box -->
+  <div class="readme-box">
+    <div class="readme-header">
+      📄 <span>README.md</span>
+    </div>
+    <div class="readme-content">
+
+      <!-- HERO -->
+      <div class="rm-hero">
+        <span class="rm-hero-shield">🛡️</span>
+        <h1>SANSKAR International School, Hajipur</h1>
+        <h2>बाल सुरक्षा नीति एवं बुलिंग विरोधी चार्टर</h2>
+        <p class="rm-hero-sub">Child Protection Policy & Anti-Bullying Charter</p>
+      </div>
+
+      <!-- Badges -->
+      <div class="badge-row">
+        <div class="rm-badge green">🏫 SANSKAR International School</div>
+        <div class="rm-badge yellow">📍 Hajipur, Bihar</div>
+        <div class="rm-badge green">📋 2024–25</div>
+        <div class="rm-badge green">🇮🇳 Hindi | English</div>
+        <div class="rm-badge yellow">✅ POCSO 2012 Compliant</div>
+      </div>
+
+      <hr class="rm-hr">
+
+      <!-- Promise -->
+      <h2 class="rm-h2">🌟 हमारा वादा | Our Promise</h2>
+      <div class="promise-quote">
+        <div class="hindi">"SANSKAR में कोई भी बच्चा अकेला नहीं रहेगा।"</div>
+        <div class="english">"No child at SANSKAR will ever face this alone."</div>
+      </div>
+
+      <hr class="rm-hr">
+
+      <!-- Files -->
+      <h2 class="rm-h2">📁 इस Repository में क्या है? | Files</h2>
+      <table class="file-table">
+        <thead>
+          <tr>
+            <th>📄 फ़ाइल / File</th>
+            <th>विवरण / Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="filename">index.html</span></td>
+            <td>🌐 मुख्य हिंदी चार्टर — इंटरैक्टिव वेबपेज</td>
+          </tr>
+          <tr>
+            <td><span class="filename">sanskar-charter.html</span></td>
+            <td>🌐 English version — Interactive Webpage</td>
+          </tr>
+          <tr>
+            <td><span class="filename">sanskar-hindi.docx</span></td>
+            <td>📄 प्रिंट करने योग्य हिंदी दस्तावेज़</td>
+          </tr>
+          <tr>
+            <td><span class="filename">sanskar-charter.docx</span></td>
+            <td>📄 Printable English Policy Document</td>
+          </tr>
+          <tr>
+            <td><span class="filename">sanskar-poster-5-waade.html</span></td>
+            <td>🖼️ कक्षा पोस्टर — हमारे 5 वादे</td>
+          </tr>
+          <tr>
+            <td><span class="filename">README.md</span></td>
+            <td>📋 यह पेज (This page)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="rm-hr">
+
+      <!-- Policy Highlights -->
+      <h2 class="rm-h2">🛡️ नीति की मुख्य बातें | Policy Highlights</h2>
+      <h3 class="rm-h3">भाग 1 — बाल सुरक्षा नीति | Part 1 — Child Protection</h3>
+      <div class="highlight-grid">
+        <div class="highlight-item"><span class="hico">✅</span>सुरक्षा पूरे विद्यालय की ज़िम्मेदारी है</div>
+        <div class="highlight-item"><span class="hico">✅</span>बच्चों की बात सुनी और मानी जाती है</div>
+        <div class="highlight-item"><span class="hico">✅</span>परिवारों के साथ साझेदारी</div>
+        <div class="highlight-item"><span class="hico">✅</span>हम बिना देरी के कदम उठाते हैं</div>
+        <div class="highlight-item"><span class="hico">✅</span>प्रशिक्षित कर्मचारी, तैयार टीम</div>
+        <div class="highlight-item"><span class="hico">✅</span>ऑनलाइन सुरक्षा भी उतनी ज़रूरी है</div>
+      </div>
+
+      <h3 class="rm-h3">भाग 2 — बुलिंग के सभी रूप | Part 2 — Types of Bullying</h3>
+      <div class="bully-grid">
+        <div class="btype"><span class="bico">👊</span>शारीरिक<br><small style="color:#8B949E;font-size:10px;">Physical</small></div>
+        <div class="btype"><span class="bico">💬</span>मौखिक<br><small style="color:#8B949E;font-size:10px;">Verbal</small></div>
+        <div class="btype"><span class="bico">📱</span>साइबर<br><small style="color:#8B949E;font-size:10px;">Cyber</small></div>
+        <div class="btype"><span class="bico">🚪</span>सामाजिक<br><small style="color:#8B949E;font-size:10px;">Social</small></div>
+        <div class="btype"><span class="bico">🎯</span>भेदभाव<br><small style="color:#8B949E;font-size:10px;">Prejudice</small></div>
+      </div>
+
+      <hr class="rm-hr">
+
+      <!-- Emergency Contacts -->
+      <h2 class="rm-h2">📞 आपातकालीन संपर्क | Emergency Contacts</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="cico">🆘</div>
+          <div>
+            <div class="cname">चाइल्डलाइन इंडिया | Childline India</div>
+            <div class="cnum">1098</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cico">📞</div>
+          <div>
+            <div class="cname">iCall हेल्पलाइन | iCall Helpline</div>
+            <div class="cnum">9152987821</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cico">🌐</div>
+          <div>
+            <div class="cname">NCPCR वेबसाइट</div>
+            <div class="cnum" style="font-size:13px;">ncpcr.gov.in</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cico">🚨</div>
+          <div>
+            <div class="cname">आपातकाल | Emergency</div>
+            <div class="cnum">112</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rm-hr">
+
+      <!-- Legal -->
+      <h2 class="rm-h2">⚖️ कानूनी अनुपालन | Legal Compliance</h2>
+      <ul class="legal-list">
+        <li><strong>POCSO Act 2012</strong> — Protection of Children from Sexual Offences</li>
+        <li><strong>RTE Act 2009</strong> — Right to Free and Compulsory Education</li>
+        <li><strong>CBSE Guidelines</strong> — Child Safety & Protection in Schools</li>
+        <li><strong>Juvenile Justice Act 2015</strong> — Care and Protection of Children</li>
+        <li><strong>NCPCR Guidelines</strong> — National Commission for Child Rights</li>
+        <li><strong>IT Act 2000</strong> — Cybersafety Provisions</li>
+      </ul>
+
+      <hr class="rm-hr">
+
+      <!-- Authorisation -->
+      <h2 class="rm-h2">✍️ अनुमोदन | Authorisation</h2>
+      <table class="sig-table">
+        <thead>
+          <tr>
+            <th>पद / Role</th>
+            <th>हस्ताक्षर / Signature</th>
+            <th>दिनांक / Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>प्रधानाचार्य / Principal</td>
+            <td class="blank">_ _ _ _ _ _ _ _ _ _ _ _</td>
+            <td class="blank">_ _ / _ _ / 2025</td>
+          </tr>
+          <tr>
+            <td>DSL / नोडल सुरक्षा अधिकारी</td>
+            <td class="blank">_ _ _ _ _ _ _ _ _ _ _ _</td>
+            <td class="blank">_ _ / _ _ / 2025</td>
+          </tr>
+          <tr>
+            <td>विद्यालय प्रबंधन / Management</td>
+            <td class="blank">_ _ _ _ _ _ _ _ _ _ _ _</td>
+            <td class="blank">_ _ / _ _ / 2025</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="rm-hr">
+
+      <!-- Footer -->
+      <div class="rm-footer">
+        <div class="big">🛡️ हर बच्चा। सुरक्षित। सम्मानित। खुश।</div>
+        <div class="small">Every Child. Protected. Respected. Happy. — SANSKAR International School, Hajipur</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <!-- About -->
+    <div class="side-card">
+      <div class="side-card-header">📋 About</div>
+      <div class="side-card-body">
+        <p style="font-size:12.5px;color:var(--text-soft);line-height:1.65;margin-bottom:14px;font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;">
+          SANSKAR International School की आधिकारिक बाल सुरक्षा नीति एवं बुलिंग विरोधी चार्टर।
+        </p>
+        <div class="topic-tags">
+          <div class="topic-tag">child-safety</div>
+          <div class="topic-tag">hindi</div>
+          <div class="topic-tag">school-policy</div>
+          <div class="topic-tag">pocso</div>
+          <div class="topic-tag">anti-bullying</div>
+          <div class="topic-tag">hajipur</div>
+          <div class="topic-tag">bihar</div>
+          <div class="topic-tag">cbse</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="side-card">
+      <div class="side-card-header">📊 Repository Info</div>
+      <div class="side-card-body">
+        <div class="stat-row">
+          <span class="stat-label">🌐 Website</span>
+          <span class="stat-val" style="color:var(--text-link);font-size:11px;">GitHub Pages ✅</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">📅 Updated</span>
+          <span class="stat-val">2024–25</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">📄 Files</span>
+          <span class="stat-val">6</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">✅ POCSO</span>
+          <span class="stat-val green">Compliant</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">🔄 Review</span>
+          <span class="stat-val yellow">Apr 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="side-card">
+      <div class="side-card-header">🌐 Languages</div>
+      <div class="side-card-body">
+        <div class="lang-bar">
+          <div class="lang-bar-track">
+            <div class="lang-seg seg-green"></div>
+            <div class="lang-seg seg-yellow"></div>
+            <div class="lang-seg seg-blue"></div>
+          </div>
+          <div class="lang-legend">
+            <div class="lang-item"><div class="lang-dot" style="background:#388E3C;"></div> हिंदी (Hindi) — 60%</div>
+            <div class="lang-item"><div class="lang-dot" style="background:#F9A825;"></div> CSS Styling — 25%</div>
+            <div class="lang-item"><div class="lang-dot" style="background:#58A6FF;"></div> English — 15%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="side-card">
+      <div class="side-card-header">🔗 Quick Links</div>
+      <div class="side-card-body">
+        <div class="quick-link">🌐 Live Hindi Charter</div>
+        <div class="quick-link">🌐 Live English Charter</div>
+        <div class="quick-link">🖼️ 5 वादे Poster</div>
+        <div class="quick-link">📄 Download Hindi DOCX</div>
+        <div class="quick-link">📄 Download English DOCX</div>
+        <div class="quick-link">📞 Childline: 1098</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
